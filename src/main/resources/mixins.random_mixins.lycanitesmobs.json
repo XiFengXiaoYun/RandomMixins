@@ -1,0 +1,14 @@
+{
+  "package": "com.xifeng.random_mixins.mixins.lycanitesmobs",
+  "required": false,
+  "refmap": "mixins.random_mixins.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8.5",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinExtendedWorld",
+    "MixinGameEventListener"
+  ],
+  "server": [],
+  "client": []
+}

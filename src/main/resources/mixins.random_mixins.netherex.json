@@ -1,11 +1,14 @@
 {
-	"package": "",
+	"package": "com.xifeng.random_mixins.mixins.netherex",
 	"required": true,
 	"refmap": "${mixin_refmap}",
 	"target": "@env(DEFAULT)",
 	"minVersion": "0.8.5",
 	"compatibilityLevel": "JAVA_8",
-	"mixins": [],
+	"mixins": [
+		"MixinMobEffectFrozen",
+		"MixinLivingHandler"
+	],
 	"server": [],
 	"client": []
 }
