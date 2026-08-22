@@ -15,9 +15,7 @@ public class MixinLoader implements ILateMixinLoader {
     }
 
     static {
-        addMixinConfig("mixins.random_mixins.lycanitesmobs.json",  "lycanitesmobs");
         addMixinConfig("mixins.random_mixins.netherex.json",  "netherex");
-        addMixinConfig("mixins.random_mixins.artemislib.json",   "artemislib");
     }
 
     private static void addMixinConfig(final String mixinConfig, String mod) {
