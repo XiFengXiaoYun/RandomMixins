@@ -15,11 +15,13 @@ public class MixinLoader implements ILateMixinLoader {
     }
 
     static {
-        addMixinConfig("mixins.random_mixins.netherex.json",  "netherex");
+        addMixinConfig("netherex", () -> Loader.isModLoaded("netherex"));
+        addMixinConfig("iceandfire", RandomMixins::iafEnabled);
+        addMixinConfig("dynaores", RandomMixins::dynaoresEnabled);
     }
 
-    private static void addMixinConfig(final String mixinConfig, String mod) {
-        MIXIN_CONFIGS.put(mixinConfig, () -> Loader.isModLoaded(mod));
-        RandomMixins.LOGGER.info("Loaded mixins " + mixinConfig + " for mod " + mod);
+    private static void addMixinConfig(String mod, BooleanSupplier supplier) {
+        MIXIN_CONFIGS.put("mixins.random_mixins." + mod + ".json", supplier);
+        RandomMixins.LOGGER.info("RandomMixins: Loaded mixins for mod " + mod);
     }
 }

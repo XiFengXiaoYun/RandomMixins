@@ -110,14 +110,12 @@ repositories {
 }
 
 dependencies {
-    implementation files('libs/champions-1.12.2-1.0.11.10.jar')
     implementation files('libs/firstaid-1.6.22.jar')
     implementation files('libs/Nyx-1.6.1.jar')
-    implementation files('libs/lycanitesmobs-1.12.2-2.0.8.10.jar')
-    implementation files('libs/ArtemisLib-1.12.2-v1.0.6.jar')
+    implementation files('libs/Dynamic-Raw-Ores-1.12.2-1.0.3.jar')
     implementation files('libs/LibraryEx-1.12.2-1.2.2.jar')
     implementation files('libs/Nether Ex [New Fantasy Edition].jar')
-    implementation files('libs/AquaAcrobatics-1.15.4.jar')
+    implementation files('libs/Ice and Fire-2.0.0.jar')
     implementation files('libs/memory_repo/com/electronwill/night-config/core/3.6.0/core-3.6.0.jar')
     implementation files('libs/memory_repo/com/electronwill/night-config/json/3.6.0/json-3.6.0.jar')
     implementation files('libs/Reliquary-1.12.2-1.3.4.796.jar')
