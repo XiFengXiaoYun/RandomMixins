@@ -55,11 +55,11 @@ public class MixinSpawnNamingHandler {
                     }
                     else if (!nameTag.contains("(") && GeneralConfig.addJobToName && ( !(entity instanceof EntityVillager) || targetAge>=0 )) { // Target is named but does not have job tag: add one!
                         String careerTag = (String) ((GeneralConfig.modNameMappingAutomatic_map.get("Professions")).get( GeneralConfig.modNameMappingAutomatic_map.get("ClassPaths").indexOf(entityClassPath) ));
-                        String newCustomName = entity.getCustomNameTag().trim() + ( careerTag.trim().isEmpty() ? "" : " ("+careerTag+")" );
+                        String newCustomName = nameTag + ( careerTag.trim().isEmpty() ? "" : " ("+careerTag+")" );
                         entity.setCustomNameTag( newCustomName.trim() );
                     }
                     else if (nameTag.contains("(") && !GeneralConfig.addJobToName) {
-                        entity.setCustomNameTag(entity.getCustomNameTag().trim().substring(0, entity.getCustomNameTag().trim().indexOf("(")).trim());
+                        entity.setCustomNameTag(nameTag.substring(0, nameTag.indexOf("(")).trim());
                     }
                 }
                 else if (addOrRemove.equals("remove")) {
