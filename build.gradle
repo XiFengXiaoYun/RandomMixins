@@ -119,6 +119,10 @@ dependencies {
     implementation files('libs/memory_repo/com/electronwill/night-config/core/3.6.0/core-3.6.0.jar')
     implementation files('libs/memory_repo/com/electronwill/night-config/json/3.6.0/json-3.6.0.jar')
     implementation files('libs/Reliquary-1.12.2-1.3.4.796.jar')
+    implementation files('libs/BiomesOPlenty-1.12.2-7.0.1.2445-universal.jar')
+    implementation files('libs/VillageNames-1.12.2-4.4.13.jar')
+    implementation files('libs/ToroQuest-Revamped-3-25-2022-fix.jar')
+    implementation files('libs/BetterMineshaftsForge-1.12.2-2.2.1.jar')
     if (propertyBool('use_modern_java_syntax')) {
         annotationProcessor 'com.github.bsideup.jabel:jabel-javac-plugin:1.0.0'
         // Workaround for https://github.com/bsideup/jabel/issues/174

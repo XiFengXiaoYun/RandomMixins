@@ -18,6 +18,10 @@ public class MixinLoader implements ILateMixinLoader {
         addMixinConfig("netherex", () -> Loader.isModLoaded("netherex"));
         addMixinConfig("iceandfire", RandomMixins::iafEnabled);
         addMixinConfig("dynaores", RandomMixins::dynaoresEnabled);
+        addMixinConfig("biomesoplenty", ()  -> Loader.isModLoaded("biomesoplenty"));
+        addMixinConfig("villagenames", () -> Loader.isModLoaded("VillageNames"));
+        addMixinConfig("toroquest", () -> Loader.isModLoaded("toroquest"));
+        addMixinConfig("bettermineshafts",  () -> Loader.isModLoaded("bettermineshafts"));
     }
 
     private static void addMixinConfig(String mod, BooleanSupplier supplier) {
