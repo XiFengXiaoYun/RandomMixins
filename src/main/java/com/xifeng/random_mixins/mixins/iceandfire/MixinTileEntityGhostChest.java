@@ -20,10 +20,8 @@ public class MixinTileEntityGhostChest extends TileEntityChest {
     private int randomMixins$spawnedGhosts = 0;
 
     @Inject(
-            method = "func_174889_b",
-            //method = "openInventory",
+            method = "openInventory",
             at = @At("HEAD"),
-            remap = false,
             cancellable = true
     )
     private void beforeOpenInventory(EntityPlayer player, CallbackInfo ci) {

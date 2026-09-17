@@ -15,17 +15,25 @@ public class MixinLoader implements ILateMixinLoader {
     }
 
     static {
-        addMixinConfig("netherex", () -> Loader.isModLoaded("netherex"));
+        addMixinConfig("netherex");
         addMixinConfig("iceandfire", RandomMixins::iafEnabled);
         addMixinConfig("dynaores", RandomMixins::dynaoresEnabled);
-        addMixinConfig("biomesoplenty", ()  -> Loader.isModLoaded("biomesoplenty"));
-        addMixinConfig("villagenames", () -> Loader.isModLoaded("VillageNames"));
-        addMixinConfig("toroquest", () -> Loader.isModLoaded("toroquest"));
-        addMixinConfig("bettermineshafts",  () -> Loader.isModLoaded("bettermineshafts"));
+        addMixinConfig("biomesoplenty");
+        addMixinConfig("villagenames");
+        addMixinConfig("toroquest");
+        addMixinConfig("bettermineshafts");
+        addMixinConfig("lycanitesmobs");
+        addMixinConfig("openterraingenerator");
+        addMixinConfig("firstaid");
     }
 
     private static void addMixinConfig(String mod, BooleanSupplier supplier) {
         MIXIN_CONFIGS.put("mixins.random_mixins." + mod + ".json", supplier);
+        RandomMixins.LOGGER.info("RandomMixins: Loaded mixins for mod " + mod);
+    }
+
+    private static void addMixinConfig(String mod) {
+        MIXIN_CONFIGS.put("mixins.random_mixins." + mod + ".json", () -> Loader.isModLoaded(mod));
         RandomMixins.LOGGER.info("RandomMixins: Loaded mixins for mod " + mod);
     }
 }

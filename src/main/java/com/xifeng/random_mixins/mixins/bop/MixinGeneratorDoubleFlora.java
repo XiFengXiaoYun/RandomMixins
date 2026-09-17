@@ -47,9 +47,9 @@ public class MixinGeneratorDoubleFlora extends GeneratorReplacing {
             if (this.with == BOPBlocks.double_plant.getDefaultState().withProperty(BlockBOPDoublePlant.VARIANT, BlockBOPDoublePlant.DoublePlantType.SEA_OATS).withProperty(BlockBOPDoublePlant.HALF, BlockBOPDoubleDecoration.Half.LOWER)) {
                 boolean grassCheck = false;
                 //reduce the search range for performance
-                for (int x = -1; x <= 1; x++) {
+                for (int x = -2; x <= 2; x++) {
                     for (int y = 1; y < 2; y ++) {
-                        for (int z = -1; z <= 1; z++) {
+                        for (int z = -2; z <= 2; z++) {
                             if (world.getBlockState(genPos.down().add(x, y, z)).getBlock() instanceof BlockGrass) {
                                 grassCheck = true;
                                 break;

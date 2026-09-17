@@ -5,7 +5,8 @@ import net.minecraftforge.common.config.Config;
 
 @Config(modid = Tags.MOD_ID)
 public class ModConfig {
-    public static IaFRotN IaF_RotN;
+    public static IaFRotN ice_and_fire;
+    public static OTG otg;
     @Config.Comment("Enable the dynaores item name fix, now can use lang key to localization the item name")
     public static boolean dynaoresEnabled = true;
 
@@ -15,5 +16,10 @@ public class ModConfig {
 
         @Config.Comment("The ghost spawn limit of ghost chest")
         public static int spawnLimit = 5;
+    }
+
+    public static class OTG {
+        @Config.Comment("Set true to disable the ore gen feature of OTG, so that use other mods(e.g. cofh world) to handle the ore gen")
+        public static boolean disableOreGen = false;
     }
 }
