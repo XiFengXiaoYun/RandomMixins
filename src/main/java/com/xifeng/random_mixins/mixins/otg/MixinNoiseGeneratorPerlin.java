@@ -56,8 +56,8 @@ public abstract class MixinNoiseGeneratorPerlin {
     }
 
     /**
-     * @author 1
-     * @reason 2
+     * @author xifeng
+     * @reason optimize the grad calculation by using a table
      */
     @Overwrite
     void populateNoiseArray3D(double[] NoiseArray, double xOffset, double yOffset, double zOffset, int xSize, int ySize, int zSize, double xScale, double yScale, double zScale, double noiseScale) {
@@ -121,8 +121,8 @@ public abstract class MixinNoiseGeneratorPerlin {
     }
 
     /**
-     * @author 1
-     * @reason 2
+     * @author xifeng
+     * @reason the same as populateNoiseArray3D
      */
     @Overwrite
     void populateNoiseArray2D(double[] NoiseArray, double xOffset, double zOffset, int xSize, int zSize, double xScale, double zScale, double noiseScale) {

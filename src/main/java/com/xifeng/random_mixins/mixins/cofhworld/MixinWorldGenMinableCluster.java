@@ -32,8 +32,8 @@ public class MixinWorldGenMinableCluster extends WorldGen {
     private  WeightedBlock[] genBlock;
 
     /**
-     * @author 2
-     * @reason 3
+     * @author xifeng
+     * @reason using BlockPos.PooledMutableBlockPos and inline setBlock to reduce BlockPos allocation
      */
     @Overwrite
     public boolean generate(World world, Random rand, BlockPos pos) {
@@ -68,7 +68,6 @@ public class MixinWorldGenMinableCluster extends WorldGen {
         final float invBlocks = 1.0F / blocks;
 
         BlockPos.PooledMutableBlockPos mutablePos = BlockPos.PooledMutableBlockPos.retain();
-
 
         try {
             for (int i = 0; i <= blocks; i++) {

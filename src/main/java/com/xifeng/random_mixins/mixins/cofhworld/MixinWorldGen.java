@@ -15,8 +15,8 @@ import org.spongepowered.asm.mixin.Overwrite;
 public class MixinWorldGen {
 
     /**
-     * @author 1
-     * @reason 2
+     * @author xifeng
+     * @reason using chunk.setBlockState to avoid neighbor notify and lightning check
      */
     @Overwrite
     public static boolean setBlock(World world, BlockPos pos, WeightedBlock ore) {
