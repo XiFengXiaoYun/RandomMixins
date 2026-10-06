@@ -110,6 +110,7 @@ public abstract class MixinPlayerDamageModel {
 
         prevScaleFactor = globalFactor;
         player.world.profiler.endSection();
+        player.world.profiler.endSection();
     }
 
 }
