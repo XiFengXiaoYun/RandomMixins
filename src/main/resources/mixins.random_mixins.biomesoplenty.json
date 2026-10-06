@@ -1,6 +1,6 @@
 {
   "package": "com.xifeng.random_mixins.mixins.bop",
-  "required": true,
+  "required": false,
   "refmap": "${mixin_refmap}",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8.5",

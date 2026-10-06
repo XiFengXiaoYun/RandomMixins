@@ -1,6 +1,6 @@
 {
   "package": "com.xifeng.random_mixins.mixins.lycanitesmobs",
-  "required": true,
+  "required": false,
   "refmap": "mixins.random_mixins.refmap.json",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8.5",

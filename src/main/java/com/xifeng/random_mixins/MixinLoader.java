@@ -25,6 +25,7 @@ public class MixinLoader implements ILateMixinLoader {
         addMixinConfig("lycanitesmobs");
         addMixinConfig("openterraingenerator");
         addMixinConfig("firstaid");
+        addMixinConfig("cofhworld");
     }
 
     private static void addMixinConfig(String mod, BooleanSupplier supplier) {
