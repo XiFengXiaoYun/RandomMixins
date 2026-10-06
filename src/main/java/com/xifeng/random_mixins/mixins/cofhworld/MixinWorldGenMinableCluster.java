@@ -15,7 +15,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
 import org.spongepowered.asm.mixin.*;
 
+import java.util.IdentityHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 @Mixin(WorldGenMinableCluster.class)
@@ -30,6 +32,10 @@ public class MixinWorldGenMinableCluster extends WorldGen {
     @Shadow(remap = false)
     @Final
     private  WeightedBlock[] genBlock;
+
+    //use cache to reduce the BlockMatcher.forBlock() call
+    @Unique
+    private static final Map<Block, BlockMatcher> randomMixins$matcherCache = new IdentityHashMap<>();
 
     /**
      * @author xifeng
@@ -171,7 +177,7 @@ public class MixinWorldGenMinableCluster extends WorldGen {
 
         for (WeightedBlock genBlock : mat) {
             if(block == genBlock.block) return true;
-            if ((genBlock.metadata == -1 || genBlock.metadata == meta) && block.isReplaceableOreGen(state, world, pos, BlockMatcher.forBlock(genBlock.block))) {
+            if ((genBlock.metadata == -1 || genBlock.metadata == meta) && block.isReplaceableOreGen(state, world, pos, randomMixins$get(genBlock.block))) {
                 return true;
             }
         }
@@ -196,5 +202,16 @@ public class MixinWorldGenMinableCluster extends WorldGen {
             return true;
         }
         return false;
+    }
+
+    @Unique
+    private static BlockMatcher randomMixins$get(Block block) {
+        BlockMatcher matcher = randomMixins$matcherCache.get(block);
+        if (matcher != null) {
+            return matcher;
+        }
+        matcher = BlockMatcher.forBlock(block);
+        randomMixins$matcherCache.put(block, matcher);
+        return matcher;
     }
 }
